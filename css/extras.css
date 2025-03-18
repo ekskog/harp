@@ -36,7 +36,9 @@ body {
     margin-left: 10px;
     width: 400px;
     margin: 0 auto;
+    border: 1px;
     }
+
 .card-body-home {
     background-color: white;
     font-size: 2rem
