@@ -11,10 +11,31 @@ body {
     margin-right: 0.5rem
 }
 
-.container {
-    padding-top: 100px;
-    width: 1000px
+/* Additional accordion styling for responsive design */
+.accordion .card-header {
+    padding: 0.5rem;
 }
+
+.accordion .btn {
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+.accordion .fa {
+    transition: transform 0.3s;
+}
+
+.accordion .btn:not(.collapsed) .fa {
+    transform: rotate(45deg);
+}
+
+.container {
+    padding-top: 50px; /* Reduced from 100px */
+    width: 100%; /* Changed from fixed 1000px */
+    max-width: 1000px; /* Add this to maintain desktop size */
+}
+
 
 .navbar {
     border: 2px solid lightgrey;
@@ -26,22 +47,30 @@ body {
 }
 
 .card-body {
-    margin-left: 10px;
-    width: 200px;
+    width: 100%; /* Changed from fixed 200px */
+    max-width: 200px; /* Add this to maintain desktop size */
     margin: 0 auto;
-    }
-
+}
 
 .card-body-text {
-    margin-left: 10px;
-    width: 400px;
+    width: 100%; /* Changed from fixed 400px */
+    max-width: 400px; /* Add this to maintain desktop size */
     margin: 0 auto;
-    border: 1px;
-    }
+}
 
 .card-body-home {
     background-color: white;
     font-size: 2rem
+}
+
+.home-title {
+    padding-top: 100px;
+}
+
+.home-subtitle {
+    padding-bottom: 100px;
+    color: lightblue;
+    font-size: 1.0rem;
 }
 
 .description {
@@ -53,9 +82,67 @@ body {
     text-align: center
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .footer {
     bottom: 0;
     color: black;
     font-size: 0.75rem;
     text-align: right
+}
+
+/* Add media queries for responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-top: 30px;
+    }
+    
+    h1 {
+        font-size: 1.8rem !important; /* Override any inline styles */
+    }
+    
+    h3 {
+        font-size: 0.9rem !important; /* Override any inline styles */
+        padding-bottom: 50px !important; /* Reduce padding on mobile */
+    }
+    
+    .card-body-home {
+        padding: 10px;
+    }
+
+    .accordion h2 {
+        font-size: 1rem;
+    }
+    
+    .card h3 {
+        font-size: 1.2rem;
+        padding: 10px 5px;
+    }
+    
+    .card-body-text {
+        padding: 10px;
+    }
+    
+    .card-body-text p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Additional mobile adjustments */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.5rem !important;
+        padding-top: 50px !important; /* Reduce padding on small mobile */
+    }
+    .d-flex {
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+    .form-control {
+        width: 100%;
+    }
 }
